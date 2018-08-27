@@ -1,26 +1,30 @@
 # Mineral Catalog
 
-This is the sixth project in Treehouse Python tech degree.
+This is the eighth project in Treehouse Python tech degree, an extension of 
+[project six](https://github.com/jhoover4/mineral-catalog).
 
-Will be hosted on Heroku upon completion.
+Project six is hosted on [Heroku](https://mineral-catalog.herokuapp.com). This project will replace it upon completion.
 
 ## Description
 
-For this project, you’ll build a form that takes in details about a registered user and displays those details on a profile page.
-The profile page should include first name, last name, email, date of birth, confirm email, short bio and the option to upload an avatar.
+As part of your job, you’ve been asked to build a website that displays information about various minerals. The home 
+page of the site contains a list of all of the minerals in a database. Clicking on a mineral’s name opens a page that 
+displays information about the mineral.
 
-You’ll also set up validation for email, date of birth and the biography.
-The Date of Birth validation should accept three date formats: YYYY-MM-DD, MM/DD/YYYY, or MM/DD/YY.
-The Email validation should check if the email addresses match and are in a valid format.
-The bio validation should check that the bio is 10 characters or longer and properly escapes HTML formatting.
-
-You’ll also create a "change password page" that updates the user’s password. This page will ask for current password,
-new password and confirm password. Set up validation which checks that the current password is valid,
-that the new password and confirm password fields match, and that the new password follows the following policy:
+- Open minerals.json and look at the attributes of a mineral. Write a model to store the mineral data. Write a script to 
+that constructs a mineral model instance for each mineral in minerals.json and saves them to a SQLite database.
+- Create a layout template for the app.
+- Create a template and view to show the names of all the minerals.
+- Create a mineral details template and view.
+- Write unit tests to test that models, classes, and other functions are working correctly.
+- Add css throughout the app to make changes match provided files.
+- Queries to the database should be optimized and take no longer than 10ms to complete.
+- Add ability to filter minerals by first letter in name, grouping, and another filter of your choice.
+- Add search bar with ability to full-text search the app.
 
 ## Extra Credit
 
-- Display the most common or important details at the top of the details list. You can decide on what order to display them in.
+- Display the most common or important details at the top of the details list. You can decide on what order to display 
+them in.
 The other miscellaneous details can be in any order.
 - Add a link that goes to a random mineral details page.
-- In addition to those provided, additional styles are added and used.
