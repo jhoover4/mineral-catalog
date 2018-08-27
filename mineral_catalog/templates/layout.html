@@ -27,21 +27,28 @@
         </a>
         <p class="logo__text text-centered">They're not rocks!</p>
     </div>
-        {% block content %}
-        {% endblock content %}
+    <div class="grid-100 search-form">
+    <form type="get" action="{% url 'index' %}">
+        <input  id="search-box" type="text" name="search-box"  placeholder="Search..." >
+        <button id="search-submit" class="minerals__anchor" type="submit" >Submit</button>
+    </form>
     </div>
-    <div class="minerals__random">
-        <a class="minerals__anchor" href="{% url 'mineral_detail' rand_mineral %}">Show random mineral</a>
-        <div class="minerals__letters">
+    {% block content %}
+    {% endblock content %}
+</div>
+<div class="minerals__random">
+    <a class="minerals__anchor" href="{% url 'mineral_detail' rand_mineral %}">Show random mineral</a>
+    <div class="minerals__letters">
         {% for letter in letters %}
             {% if letter == searched_letter %}
-                <strong><a class="minerals__letter bolded" href="{% url 'index' %}?q={{ letter }}">{{ letter|upper }}</a></strong>
+                <strong><a class="minerals__letter bolded"
+                           href="{% url 'index' %}?q={{ letter }}">{{ letter|upper }}</a></strong>
             {% else %}
                 <a class="minerals__letter" href="{% url 'index' %}?q={{ letter }}">{{ letter }}</a>
             {% endif %}
         {% endfor %}
-        </div>
     </div>
+</div>
 </body>
 {% endblock static %}
 </html>

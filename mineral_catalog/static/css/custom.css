@@ -13,3 +13,34 @@
 .minerals__random {
     padding: 25px 0 20px 0;
 }
+
+.search-form form {
+    padding: 0 1rem 2rem 1rem;
+}
+
+.search-form input,
+.search-form button {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.search-form input {
+    display: block;
+    text-align: center;
+}
+
+.search-form button {
+    margin-top: .5rem;
+    background-color: #DCF5F2;
+}
+
+.minerals__empty {
+    background-color: #fff;
+    border-radius: 6px;
+    text-align: center;
+    padding: 5rem;
+}
+
+.minerals__empty p {
+    margin: 0;
+}

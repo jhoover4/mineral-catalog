@@ -1,4 +1,5 @@
 import random
+import string
 
 from django.shortcuts import render, get_object_or_404
 
@@ -18,6 +19,7 @@ def mineral_detail(request, mineral_id):
         'mineral': mineral,
         'mineral_form': mineral_form,
         'rand_mineral': rand_num,
+        'letters': string.ascii_lowercase
     }
 
     return render(request, 'detail.html', context)
