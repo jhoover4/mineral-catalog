@@ -1,0 +1,15 @@
+.minerals__letters {
+    padding: 5% 5% 0 5%;
+}
+
+@media (min-width: 550px) {
+    .minerals__letters {
+        margin-top: 1rem;
+        padding: .5rem 1rem 0 1rem;
+
+    }
+}
+
+.minerals__random {
+    padding: 25px 0 20px 0;
+}
