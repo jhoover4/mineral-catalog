@@ -12,7 +12,7 @@ def mineral_detail(request, mineral_id):
 
     mineral_form = MineralForm(instance=mineral)
 
-    all_mineral_count = Mineral.objects.all().count()
+    all_mineral_count = Mineral.objects.all().values('id').count()
     rand_num = random.randint(1, all_mineral_count)
 
     context = {

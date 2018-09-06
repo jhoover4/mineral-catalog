@@ -1,0 +1,69 @@
+{% load custom_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Macky's Minerals: A magnificant catalog of minerals</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,500' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Cousine' rel='stylesheet' type='text/css'>
+    {% load static from staticfiles %}
+    {% block static %}
+        <link href="{% static 'css/global.css' %}" rel='stylesheet' type='text/css'>
+        <link href="{% static 'css/custom.css' %}" rel='stylesheet' type='text/css'>
+        </head>
+        <body>
+        <div class="bounds">
+            <div class="grid-100">
+                <a href="{% url 'index' %}">
+                    <svg class="logo" viewBox="0 0 127.6 84.8" preserveAspectRation="xMinYMin meet">
+                        <polygon points="42.7,84.8 49.6,79.4 40,62.5 51.2,43.5 51.2,43.5 25,0 0,55.6 "/>
+                        <polygon class="logo--middle" points="52.9,79.5 52.9,79.5 84.8,80.1 59.7,35 43.3,62.4 "/>
+                        <polygon
+                                points="127.6,61.4 127.6,61.4 110.3,13.5 110.3,13.5 70.3,48.1 70.3,48.1 88.3,80.5 95.3,81.4 95.3,81.4 "/>
+                    </svg>
+                    <h1 class="logo__name text-centered">Macky's Minerals</h1>
+                </a>
+                <p class="logo__text text-centered">They're not rocks!</p>
+            </div>
+            <div class="grid-100 search-form">
+                <form type="get" action="{% url_add_replace request 'search-box' search_term %}">
+                    <input id="search-box" type="text" name="search-box" placeholder="Search...">
+                    <button id="search-submit" class="minerals__anchor" type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="grid-25 sidebar">
+                <h2>Group Filter</h2>
+                <ul>
+                    {% for group in mineral_groups %}
+                        <li class="group__item">
+                                <a class="group__link"
+                                   href="{% url_add_replace request 'group' group.name %}">{{ group.name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="grid-75">
+                {% block content %}
+                {% endblock content %}
+            </div>
+        </div>
+        <div class="minerals__random">
+            <a class="minerals__anchor" href="{% url 'mineral_detail' rand_mineral %}">Show random mineral</a>
+            <div class="minerals__letters">
+                {% for letter in letters %}
+                    {% if letter == searched_letter %}
+                        <strong><a class="minerals__letter bolded"
+                                   href="{% url 'index' %}?letter={{ letter }}">{{ letter|upper }}</a></strong>
+                    {% else %}
+                        <a class="minerals__letter" href="{% url 'index' %}?letter={{ letter }}">{{ letter }}</a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        </body>
+    {% endblock static %}
+</html>
