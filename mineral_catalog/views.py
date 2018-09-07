@@ -19,11 +19,14 @@ def index(request):
     searched_letter = None
 
     if search_box_query:
-        query = Q(name__icontains=search_box_query)
+        query = Q(group__name__icontains=search_box_query) | Q(categories__name__icontains=search_box_query)
+        for field in Mineral._meta.get_fields():
+            if field.name not in ['id', 'group', 'categories']:
+                query |= Q(**{field.name + '__icontains': search_box_query})
     elif group_search_query:
         query = Q(group__name=group_search_query)
     elif category_search_query:
-        query = Q(category__name=category_search_query)
+        query = Q(categories__name=category_search_query)
     else:
         searched_letter = request.GET.get('letter', 'a')
         query = Q(name__startswith=searched_letter)
@@ -40,11 +43,15 @@ def index(request):
     groups = Group.objects.values('name').order_by('name')
     categories = Category.objects.values('name').order_by('name')
 
+    searched_category = category_search_query if category_search_query else categories[0]
+
     context = {
         'minerals': minerals,
         'rand_mineral': rand_num,
         'letters': string.ascii_lowercase,
         'searched_letter': searched_letter,
+        'searched_category': searched_category,
+        'searched_group': group_search_query,
         'search_term': search_box_query,
         'mineral_groups': groups,
         'mineral_categories': categories,

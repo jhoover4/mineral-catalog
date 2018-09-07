@@ -11,10 +11,6 @@
         <div class="mineral__table-container">
             <table class="mineral__table">
                 <tr>
-                    <td class="mineral__category">Category</td>
-                    <td>{{ mineral.category }}</td>
-                </tr>
-                <tr>
                     <td class="mineral__category">Formula</td>
                     {% autoescape off %}
                         <td class="mineral__formula">{{ mineral.formula }}</td>
@@ -26,6 +22,10 @@
                         <td>{{ field.value }}</td>
                     </tr>
                 {% endfor %}
+                <tr>
+                    <td class="mineral__category">Categories</td>
+                    <td>{{ mineral.category_names }}</td>
+                </tr>
                 <tr>
                     <td class="mineral__category">Group</td>
                     <td>{{ mineral.group }}</td>

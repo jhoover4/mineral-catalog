@@ -3,10 +3,10 @@ from django import template
 register = template.Library()
 
 
-@register.simple_tag(name='url_add_replace')
-def url_add_replace(request, field, value):
+@register.simple_tag(name='url_filter_replace')
+def url_filter_replace(request, field, value):
+    """Always returns to home page and applies necessary filter."""
+
     url_string = request.GET.copy()
 
-    url_string.__setitem__(field, value)
-
-    return u"?%s" % (url_string.urlencode())
+    return u"/?{}={}".format(field, value)
