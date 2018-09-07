@@ -17,10 +17,10 @@ class MineralModelTests(TestCase):
 
         self.new_mineral = Mineral.objects.create(
             name='Test',
-            category=self.new_category,
             group=self.new_group,
         )
         self.new_mineral.save()
+        self.new_mineral.categories.add(self.new_category.pk)
 
     def test_group_name(self):
         name = "test_group"
@@ -62,17 +62,17 @@ class MineralDetailViewTests(TestCase):
 
         self.new_mineral_1 = Mineral.objects.create(
             name='Test1',
-            category=self.new_category,
             group=self.new_group,
         )
         self.new_mineral_1.save()
+        self.new_mineral_1.categories.add(self.new_category.pk)
 
         self.new_mineral_2 = Mineral.objects.create(
             name='Test2',
-            category=self.new_category,
             group=self.new_group,
         )
         self.new_mineral_2.save()
+        self.new_mineral_2.categories.add(self.new_category.pk)
 
     def test_view_url_exists_at_desired_location(self):
         resp = self.client.get('/detail/1/')
