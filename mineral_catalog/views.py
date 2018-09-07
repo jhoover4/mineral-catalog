@@ -43,14 +43,12 @@ def index(request):
     groups = Group.objects.values('name').order_by('name')
     categories = Category.objects.values('name').order_by('name')
 
-    searched_category = category_search_query if category_search_query else categories[0]
-
     context = {
         'minerals': minerals,
         'rand_mineral': rand_num,
         'letters': string.ascii_lowercase,
         'searched_letter': searched_letter,
-        'searched_category': searched_category,
+        'searched_category': category_search_query,
         'searched_group': group_search_query,
         'search_term': search_box_query,
         'mineral_groups': groups,

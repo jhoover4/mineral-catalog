@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    {% if not minerals %}
+    {% if not minerals and search_term %}
         <div class="minerals__empty">
             <h2>No minerals found</h2>
             <p>No matches for '{{ search_term }}'. Please try a different search term.</p>
@@ -9,7 +9,19 @@
     {% else %}
         {% if search_term %}
             <div>
-                <p>Showing results for '{{ search_term }}' in all mineral fields</p>
+                <p>Showing results for <span class="search-term">'{{ search_term }}'</span> in all mineral fields</p>
+            </div>
+        {% elif searched_group %}
+            <div>
+                <p>Showing results for the <span class="search-term">'{{ searched_group }}'</span> group</p>
+            </div>
+        {% elif searched_category %}
+            <div>
+                <p>Showing results for the <span class="search-term">'{{ searched_category }}'</span> category</p>
+            </div>
+        {% elif searched_letter %}
+            <div>
+                <p>Showing results for mineral names beginning with '{{ searched_letter|upper }}'</p>
             </div>
         {% endif %}
         <ul class="minerals__container">

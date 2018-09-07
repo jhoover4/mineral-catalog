@@ -14,6 +14,7 @@
     {% block static %}
         <link href="{% static 'css/global.css' %}" rel='stylesheet' type='text/css'>
         <link href="{% static 'css/custom.css' %}" rel='stylesheet' type='text/css'>
+        <link href="{% static 'images/favicon.ico' %}" rel='icon' type='image/png'>
         </head>
         <body>
         <div class="bounds">
@@ -29,42 +30,47 @@
                 </a>
                 <p class="logo__text text-centered">They're not rocks!</p>
             </div>
-            <div class="grid-100 search-form">
-                <form type="get" action="{% url_filter_replace request 'search-box' search_term %}">
-                    <input id="search-box" type="text" name="search-box" placeholder="Search...">
-                    <button id="search-submit" class="minerals__anchor" type="submit">Submit</button>
-                </form>
-            </div>
-            <div class="grid-25 sidebar">
-                <h2>Group Filter</h2>
-                <ul>
-                    {% for group in mineral_groups %}
-                        <li class="group__item">
-                            {% if group.name == searched_group %}
-                                <a class="group__link bolded"
-                                   href="{% url_filter_replace request 'group' group.name %}">{{ group.name }}</a>
-                            {% else %}
-                                <a class="group__link"
-                                   href="{% url_filter_replace request 'group' group.name %}">{{ group.name }}</a>
-                            {% endif %}
-                        </li>
-                    {% endfor %}
-                </ul>
-                <h2>Category Filter</h2>
-                <select class="category__filter" onChange="window.location.href=this.value">
-                    {% for category in mineral_categories %}
-                        {% if category.name == searched_category %}
-                            <option value="{% url_filter_replace request 'cat' category.name %}"
-                                    selected>{{ category.name|title }}</option>
-                        {% else %}
-                            <option value="{% url_filter_replace request 'cat' category.name %}">{{ category.name|title }}</option>
-                        {% endif %}
-                    {% endfor %}
-                </select>
-            </div>
             <div class="grid-75">
                 {% block content %}
                 {% endblock content %}
+            </div>
+            <div class="grid-25 sidebar">
+                <div class="search-form">
+                    <h2>Search</h2>
+                    <form type="get" action="{% url_filter_replace request 'search-box' search_term %}">
+                        <input id="search-box" type="text" name="search-box" placeholder="Search...">
+                        <button id="search-submit" class="minerals__anchor" type="submit">Submit</button>
+                    </form>
+                </div>
+                <div class="groups">
+                    <h2>Group Filter</h2>
+                    <ul>
+                        {% for group in mineral_groups %}
+                            <li class="group__item">
+                                {% if group.name == searched_group %}
+                                    <a class="group__link bolded"
+                                       href="{% url_filter_replace request 'group' group.name %}">{{ group.name }}</a>
+                                {% else %}
+                                    <a class="group__link"
+                                       href="{% url_filter_replace request 'group' group.name %}">{{ group.name }}</a>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="categories">
+                    <h2>Category Filter</h2>
+                    <select onChange="window.location.href=this.value">
+                        {% for category in mineral_categories %}
+                            {% if category.name == searched_category %}
+                                <option value="{% url_filter_replace request 'cat' category.name %}"
+                                        selected>{{ category.name|title }}</option>
+                            {% else %}
+                                <option value="{% url_filter_replace request 'cat' category.name %}">{{ category.name|title }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
             </div>
         </div>
         <div class="minerals__random">
