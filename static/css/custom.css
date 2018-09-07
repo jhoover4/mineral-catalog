@@ -59,6 +59,10 @@
     text-decoration: underline;
 }
 
+.minerals__letter.bolded {
+    text-transform: uppercase;
+}
+
 .minerals__empty {
     background-color: #fff;
     border-radius: 6px;

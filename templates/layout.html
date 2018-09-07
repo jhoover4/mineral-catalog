@@ -47,13 +47,8 @@
                     <ul>
                         {% for group in mineral_groups %}
                             <li class="group__item">
-                                {% if group.name == searched_group %}
-                                    <a class="group__link bolded"
-                                       href="{% url_filter_replace request 'group' group.name %}">{{ group.name }}</a>
-                                {% else %}
-                                    <a class="group__link"
-                                       href="{% url_filter_replace request 'group' group.name %}">{{ group.name }}</a>
-                                {% endif %}
+                                    <a class="group__link {% if group.name == searched_group %}bolded{% endif %}"
+                                       href="{% url_filter_replace request 'group' group.name %}">{{ group.name|title }}</a>
                             </li>
                         {% endfor %}
                     </ul>
@@ -62,12 +57,8 @@
                     <h2>Category Filter</h2>
                     <select onChange="window.location.href=this.value">
                         {% for category in mineral_categories %}
-                            {% if category.name == searched_category %}
-                                <option value="{% url_filter_replace request 'cat' category.name %}"
-                                        selected>{{ category.name|title }}</option>
-                            {% else %}
-                                <option value="{% url_filter_replace request 'cat' category.name %}">{{ category.name|title }}</option>
-                            {% endif %}
+                            <option value="{% url_filter_replace request 'cat' category.name %}"
+                                    {% if category.name == searched_category %}selected{% endif %}>{{ category.name|title }}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -77,12 +68,8 @@
             <a class="minerals__anchor" href="{% url 'mineral_detail' rand_mineral %}">Show random mineral</a>
             <div class="minerals__letters">
                 {% for letter in letters %}
-                    {% if letter == searched_letter %}
-                        <strong><a class="minerals__letter bolded"
-                                   href="{% url 'index' %}?letter={{ letter }}">{{ letter|upper }}</a></strong>
-                    {% else %}
-                        <a class="minerals__letter" href="{% url 'index' %}?letter={{ letter }}">{{ letter }}</a>
-                    {% endif %}
+                    <strong><a class="minerals__letter {% if letter == searched_letter %}bolded{% endif %}"
+                               href="{% url 'index' %}?letter={{ letter }}">{{ letter }}</a></strong>
                 {% endfor %}
             </div>
         </div>
