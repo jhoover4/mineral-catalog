@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=300)
+    name = models.CharField(max_length=300, default='None')
 
     def __str__(self):
         return self.name
@@ -19,7 +19,6 @@ class Mineral(models.Model):
     name = models.CharField(max_length=300)
     image_filename = models.CharField(max_length=300)
     image_caption = models.CharField(max_length=300)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     formula = models.CharField(max_length=300, blank=True)
     strunz = models.CharField(max_length=300, blank=True)
     crystal_system = models.CharField(max_length=300)
@@ -35,6 +34,7 @@ class Mineral(models.Model):
     refractive_index = models.CharField(max_length=300, blank=True)
     crystal_habit = models.CharField(max_length=300, blank=True)
     specific_gravity = models.CharField(max_length=300, blank=True)
+    categories = models.ManyToManyField(Category)
     group = models.ForeignKey(Group, on_delete=models.CASCADE)
 
     def first_name(self):
@@ -42,6 +42,11 @@ class Mineral(models.Model):
 
     def static_url(self):
         return 'images/minerals/' + self.name.lower() + '.jpg'
+
+    def category_names(self):
+        return ', '.join([a.name for a in self.categories.all()])
+
+    # category_names.short_description = "Category Names"
 
     def __str__(self):
         return self.name

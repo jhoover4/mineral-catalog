@@ -45,6 +45,11 @@
     margin: 0;
 }
 
-.group__item {
+.category__filter {
+    width: 100%;
+}
 
+.bolded {
+    font-weight: 900;
+    text-decoration: underline;
 }

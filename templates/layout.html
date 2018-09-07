@@ -30,7 +30,7 @@
                 <p class="logo__text text-centered">They're not rocks!</p>
             </div>
             <div class="grid-100 search-form">
-                <form type="get" action="{% url_add_replace request 'search-box' search_term %}">
+                <form type="get" action="{% url_filter_replace request 'search-box' search_term %}">
                     <input id="search-box" type="text" name="search-box" placeholder="Search...">
                     <button id="search-submit" class="minerals__anchor" type="submit">Submit</button>
                 </form>
@@ -40,11 +40,27 @@
                 <ul>
                     {% for group in mineral_groups %}
                         <li class="group__item">
+                            {% if group.name == searched_group %}
+                                <a class="group__link bolded"
+                                   href="{% url_filter_replace request 'group' group.name %}">{{ group.name }}</a>
+                            {% else %}
                                 <a class="group__link"
-                                   href="{% url_add_replace request 'group' group.name %}">{{ group.name }}</a>
+                                   href="{% url_filter_replace request 'group' group.name %}">{{ group.name }}</a>
+                            {% endif %}
                         </li>
                     {% endfor %}
                 </ul>
+                <h2>Category Filter</h2>
+                <select class="category__filter" onChange="window.location.href=this.value">
+                    {% for category in mineral_categories %}
+                        {% if category.name == searched_category %}
+                            <option value="{% url_filter_replace request 'cat' category.name %}"
+                                    selected>{{ category.name|title }}</option>
+                        {% else %}
+                            <option value="{% url_filter_replace request 'cat' category.name %}">{{ category.name|title }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
             </div>
             <div class="grid-75">
                 {% block content %}

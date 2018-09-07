@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
             name='Category',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=300)),
+                ('name', models.CharField(max_length=300, default='None')),
             ],
         ),
         migrations.CreateModel(
@@ -48,7 +48,7 @@ class Migration(migrations.Migration):
                 ('refractive_index', models.CharField(blank=True, max_length=300)),
                 ('crystal_habit', models.CharField(blank=True, max_length=300)),
                 ('specific_gravity', models.CharField(blank=True, max_length=300)),
-                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='mineral_detail.Category')),
+                ('categories', models.ManyToManyField(to='mineral_detail.Category')),
                 ('group', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='mineral_detail.Group')),
             ],
         ),
