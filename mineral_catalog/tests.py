@@ -1,7 +1,7 @@
+from django.core.paginator import Paginator
 from django.db.models import Q
 from django.test import TestCase
 from django.urls import reverse
-from django.core.paginator import Paginator
 
 from mineral_detail.models import Mineral
 
@@ -68,7 +68,7 @@ class MineralIndexViewTests(TestCase):
             Q(refractive_index__icontains=search_box_query) |
             Q(crystal_habit__icontains=search_box_query) |
             Q(specific_gravity__icontains=search_box_query)
-        )
+        ).distinct()
 
         resp = self.client.get(reverse('index'), {'search-box': search_box_query})
 

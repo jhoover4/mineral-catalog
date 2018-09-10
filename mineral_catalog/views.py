@@ -31,7 +31,7 @@ def index(request):
         searched_letter = request.GET.get('letter', 'a')
         query = Q(name__startswith=searched_letter)
 
-    filtered_minerals = Mineral.objects.filter(query)
+    filtered_minerals = Mineral.objects.filter(query).distinct()
 
     all_mineral_ids = Mineral.objects.all().values('id')
     rand_num = random.randint(1, all_mineral_ids.count())
