@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b6282273-135c-464c-8b9e-369e1575b442" name="Default Changelist" comment="Updated models for Heroku.">
+    <list default="true" id="b6282273-135c-464c-8b9e-369e1575b442" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mineral_catalog/deploy_settings/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/mineral_catalog/deploy_settings/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mineral_catalog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mineral_catalog/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,16 +25,18 @@
         <counts>
           <entry key="Procfile" value="13" />
           <entry key="env" value="13" />
+          <entry key="md" value="16" />
           <entry key="py" value="52" />
           <entry key="py@treehouse-project-08" value="21" />
-          <entry key="txt" value="166" />
+          <entry key="txt" value="228" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="13" />
           <entry key="CommandLine" value="21" />
-          <entry key="PLAIN_TEXT" value="179" />
+          <entry key="Markdown" value="16" />
+          <entry key="PLAIN_TEXT" value="241" />
           <entry key="Python" value="52" />
         </counts>
       </usages-collector>
@@ -48,6 +49,7 @@
         <counts>
           <entry key=".env file" value="2" />
           <entry key="HTML" value="1" />
+          <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="Python" value="14" />
         </counts>
@@ -57,6 +59,7 @@
           <entry key="Procfile" value="1" />
           <entry key="env" value="2" />
           <entry key="html" value="1" />
+          <entry key="md" value="1" />
           <entry key="py" value="14" />
           <entry key="txt" value="2" />
         </counts>
@@ -73,11 +76,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mineral_catalog/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="136" lean-forward="true" selection-start-line="136" selection-end-line="136" />
+            <state relative-caret-position="671">
+              <caret line="136" selection-start-line="136" selection-end-line="136" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="90">
+                <caret line="6" selection-start-line="6" selection-end-line="6" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -160,6 +175,7 @@
         <option value="$PROJECT_DIR$/mineral_catalog/deploy_settings/__init__.py" />
         <option value="$PROJECT_DIR$/mineral_catalog/views.py" />
         <option value="$PROJECT_DIR$/mineral_catalog/settings.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -301,19 +317,19 @@
       <option name="project" value="LOCAL" />
       <updated>1536593666512</updated>
     </task>
-    <task id="LOCAL-00009" summary="Updated filters.">
-      <created>1536274569619</created>
+    <task id="LOCAL-00009" summary="Updated models for Heroku.">
+      <created>1536594654858</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1536274569619</updated>
+      <updated>1536594654858</updated>
     </task>
-    <task id="LOCAL-00010" summary="Updated model categories and how categories are pulled from json.">
-      <created>1536349730434</created>
+    <task id="LOCAL-00010" summary="Updated letter search to be case insensitive.">
+      <created>1536594694323</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1536349730434</updated>
+      <updated>1536594694323</updated>
     </task>
     <task id="LOCAL-00011" summary="Updated filters to add full text search and category support.">
       <created>1536349759774</created>
@@ -364,7 +380,7 @@
       <option name="project" value="LOCAL" />
       <updated>1536543591463</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -399,7 +415,7 @@
       <configuration name="Test: " configurationId="DjangoTestsConfigurationType" />
     </history-entry>
   </component>
-  <component name="TodoView" selected-index="4">
+  <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -412,12 +428,12 @@
     <frame x="47" y="22" width="1572" height="933" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3130719" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3130719" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32818073" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32580262" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32580262" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4019025" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -463,6 +479,32 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -486,7 +528,8 @@
     <MESSAGE value="Updated model field lengths for Heroku." />
     <MESSAGE value="asd" />
     <MESSAGE value="Updated models for Heroku." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated models for Heroku." />
+    <MESSAGE value="Updated letter search to be case insensitive." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated letter search to be case insensitive." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -571,8 +614,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mineral_catalog/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="136" lean-forward="true" selection-start-line="136" selection-end-line="136" />
+        <state relative-caret-position="671">
+          <caret line="136" selection-start-line="136" selection-end-line="136" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="90">
+            <caret line="6" selection-start-line="6" selection-end-line="6" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

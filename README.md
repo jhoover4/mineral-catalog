@@ -3,7 +3,8 @@
 This is the eighth project in Treehouse Python tech degree, an extension of 
 [project six](https://github.com/jhoover4/mineral-catalog).
 
-Project six is hosted on [Heroku](https://mineral-catalog.herokuapp.com). This project will replace it upon completion.
+Hosted on [Heroku](https://mineral-catalog-filter.herokuapp.com). To view locally clone the repo, download the 
+requirements with ```pip install requirements.txt``` and run ```python manage.py runserver```.
 
 ## Description
 
