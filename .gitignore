@@ -30,4 +30,4 @@ venv/
 ENV/
 
 .DS_Store
-.idea
+.idea/
