@@ -2,7 +2,7 @@ import dj_database_url
 
 from mineral_catalog.settings import *
 
-DEBUG = False
+DEBUG = os.environ.get('DEBUG', False)
 TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = [

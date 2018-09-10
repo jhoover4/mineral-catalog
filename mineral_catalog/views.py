@@ -29,7 +29,7 @@ def index(request):
         query = Q(categories__name=category_search_query)
     else:
         searched_letter = request.GET.get('letter', 'a')
-        query = Q(name__startswith=searched_letter)
+        query = Q(name__istartswith=searched_letter)
 
     filtered_minerals = Mineral.objects.filter(query).distinct()
 
