@@ -44,9 +44,9 @@ class MineralModelTests(TestCase):
         self.assertEqual(mineral.name, name)
 
     def test_mineral_url(self):
-        static_url = 'images/minerals/test.jpg'
+        static_url = 'images/minerals/Test.jpg'
 
-        self.assertEqual(self.new_mineral.static_url(), static_url)
+        self.assertEqual(self.new_mineral.static_url, static_url)
 
     def test_mineral_first_name(self):
         self.assertEqual(self.new_mineral.first_name(), "Test")
