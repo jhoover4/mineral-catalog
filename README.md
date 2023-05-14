@@ -3,7 +3,7 @@
 This is the sixth and eighth project in the Treehouse Python tech degree.
 
 Hosted on [Heroku](https://mineral-catalog-filter.herokuapp.com). To view locally clone the repo, download the 
-requirements with ```pip install requirements.txt``` and run ```python manage.py runserver```.
+requirements with ```pip install -r requirements.txt``` and run ```python manage.py runserver```.
 
 ## Description
 
